@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Camina i fes UNLOCK!</title>
+    <script type="module" crossorigin src="/assets/index-DCB85T3m.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DJMDvG5I.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <img class="logo" src="/img/logo_V2.png" alt="Logo" />
+        <div class="subtitle">Desbloqueja imatges caminant (500m per cadascuna). Prem START i comença a caminar!</div>
+      </div>
+
+      <div class="top-actions">
+        <button id="btnGallery" class="btn secondary" type="button">Galeria</button>
+        <button id="btnSettings" class="btn icon" type="button" aria-label="Configuració">⚙️</button>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card main-card">
+
+
+        <div class="actions">
+          <button id="btnStartStop" class="btn primary" type="button">Start</button>
+          <button id="btnReset" class="btn secondary" type="button">Reset</button>
+          <button id="btnNext" class="btn secondary" type="button">Següent ▶</button>
+        </div>
+
+        
+        <div class="canvas-wrap">
+          <canvas id="canvas" width="1080" height="1080"></canvas>
+          <div class="badge" id="badgeStatus" hidden><div class="badge-inner"><span class="badge-text">Nova Imatge Desbloquejada</span><div class="badge-sparkles" aria-hidden="true"></div></div></div>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <div class="label">Imatge activa</div>
+            <div class="value" id="txtActiveImage">imatge01</div>
+          </div>
+          <div class="stat">
+            <div class="label">Distància</div>
+            <div class="value"><span id="txtMeters">0</span> m / 500 m</div>
+          </div>
+          <div class="stat">
+            <div class="label">Progrés</div>
+            <div class="value"><span id="txtPercent">0</span>% completat</div>
+            <div class="bar"><div id="progressFill" class="fill" style="width:0%"></div></div>
+          </div>
+        </div>
+<div id="demoControls" class="demo" hidden>
+          <div class="demo-title">Mode demo</div>
+          <button id="btnAdd50" class="btn secondary" type="button">+50m</button>
+          <button id="btnAdd200" class="btn secondary" type="button">+200m</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Settings panel -->
+    <aside id="settingsPanel" class="panel" hidden>
+      <div class="panel-header">
+        <div class="panel-title">Configuració</div>
+        <button id="btnCloseSettings" class="btn icon" type="button" aria-label="Tancar">✕</button>
+      </div>
+
+      <div class="panel-content">
+        <label class="row">
+          <span>Mode nit</span>
+          <input id="togDarkMode" type="checkbox" />
+        </label>
+
+        <label class="row">
+          <span>Vibració</span>
+          <input id="togHaptics" type="checkbox" />
+        </label>
+
+        <label class="row">
+          <span>Mode demo</span>
+          <input id="togDemoMode" type="checkbox" />
+        </label>
+
+        <label class="row">
+          <span>Mida tiles</span>
+          <select id="selTileSize">
+            <option value="16">16</option>
+            <option value="24" selected>24</option>
+            <option value="32">32</option>
+          </select>
+        </label>
+
+      </div>
+    </aside>
+
+    <!-- Gallery modal -->
+    <div id="galleryModal" class="modal" hidden>
+      <div class="modal-card">
+        <div class="modal-header">
+          <div class="modal-title">Galeria</div>
+          <button id="btnCloseGallery" class="btn icon" type="button" aria-label="Tancar">✕</button>
+        </div>
+
+        <div id="galleryGrid" class="grid"></div>
+
+        <div class="modal-footer">
+          <div class="hint">Clica una imatge per activar-la. (Les desbloquejades queden al 100%).</div>
+        </div>
+      </div>
+    </div>
+
+  
+    <!-- Viewer modal (zoom) -->
+    <div id="viewerModal" class="modal" hidden>
+      <div class="modal-card viewer-card">
+        <div class="modal-header">
+          <div class="modal-title" id="viewerTitle">Imatge</div>
+          <button id="btnCloseViewer" class="btn icon" type="button" aria-label="Tancar">✕</button>
+        </div>
+
+        <div class="viewer-body">
+          <img id="viewerImg" alt="Imatge desbloquejada" />
+        </div>
+
+        <div class="viewer-controls">
+          <button id="btnZoomOut" class="btn secondary" type="button">−</button>
+          <div class="viewer-zoom" id="viewerZoomLabel">100%</div>
+          <button id="btnZoomIn" class="btn secondary" type="button">+</button>
+          <button id="btnZoomReset" class="btn secondary" type="button">Reset zoom</button>
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>

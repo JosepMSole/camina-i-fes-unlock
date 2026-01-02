@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">CaminaifesUNLOCK</string>
+    <string name="title_activity_main">CaminaifesUNLOCK</string>
+    <string name="package_name">cat.pr1.caminaunlock</string>
+    <string name="custom_url_scheme">cat.pr1.caminaunlock</string>
+</resources>

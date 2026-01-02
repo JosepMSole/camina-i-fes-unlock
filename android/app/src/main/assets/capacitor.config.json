@@ -1,0 +1,6 @@
+{
+	"appId": "cat.pr1.caminaunlock",
+	"appName": "CaminaifesUNLOCK",
+	"webDir": "dist",
+	"bundledWebRuntime": false
+}
