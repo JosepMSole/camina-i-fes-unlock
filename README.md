@@ -22,7 +22,7 @@ npm install
 npm run dev
 ```
 
-## Preparar Android (1a vegada)
+## Preparar Android
 ```bash
 npm run build
 npx cap add android
